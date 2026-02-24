@@ -10,13 +10,13 @@ interface ListControlsProps {
 
 const ListControls: React.FC<ListControlsProps> = ({ filter, setFilter, sortOrder, toggleSort, resultsCount }) => {
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
       <div className="flex p-1 border glass rounded-2xl border-white/10">
         {(["all", "bacteria", "fungi"] as const).map((type) => (
           <button
             key={type}
             onClick={() => setFilter(type)}
-            className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all capitalize ${
+            className={`px-3 md:px-4 py-1.5 rounded-xl text-[10px] md:text-xs font-bold transition-all capitalize ${
               filter === type ? "bg-primary text-white shadow-lg shadow-primary/20" : "hover:bg-white/5 opacity-50"
             }`}
           >
@@ -27,12 +27,12 @@ const ListControls: React.FC<ListControlsProps> = ({ filter, setFilter, sortOrde
 
       <button
         onClick={toggleSort}
-        className={`flex items-center gap-3 px-5 py-2 text-xs font-bold border transition-all glass rounded-2xl border-white/10 hover:bg-white/5 ${
+        className={`flex items-center gap-2 md:gap-3 px-3 md:px-5 py-2 text-[10px] md:text-xs font-bold border transition-all glass rounded-2xl border-white/10 hover:bg-white/5 ${
           sortOrder !== "alpha" ? "border-primary/50 text-primary" : "text-foreground/60"
         }`}
       >
         <span className="tracking-tighter uppercase opacity-50">Sort</span>
-        <div className="flex flex-col items-center leading-none text-[10px]">
+        <div className="flex flex-col items-center leading-none text-[10px] scale-90 md:scale-100">
           <span className={sortOrder === "asc" ? "text-primary scale-125" : "opacity-30"}>▲</span>
           <span className={sortOrder === "desc" ? "text-primary scale-125" : "opacity-30"}>▼</span>
         </div>
@@ -43,8 +43,8 @@ const ListControls: React.FC<ListControlsProps> = ({ filter, setFilter, sortOrde
         </span>
       </button>
 
-      <div className="px-4 py-2 text-xs font-medium text-center border glass rounded-xl border-white/10 min-w-28">
-        Results: {resultsCount}
+      <div className="px-3 py-2 text-[10px] md:text-xs font-medium text-center border glass rounded-xl border-white/10 min-w-24 md:min-w-28 opacity-60">
+        {resultsCount} items
       </div>
     </div>
   );

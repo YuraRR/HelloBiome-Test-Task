@@ -32,9 +32,9 @@ const CardsList = () => {
 
   return (
     <div className="w-full pb-32">
-      <div className="px-6 mx-auto mt-6 max-w-7xl">
-        <div className="flex justify-center mb-16">
-          <div className="p-2 bg-white border shadow-xl rounded-3xl shadow-black/5 border-black/5">
+      <div className="px-4 mx-auto mt-8 max-w-7xl md:px-6 md:mt-12">
+        <div className="flex justify-center mb-8 md:mb-16">
+          <div className="p-2 bg-white border shadow-xl rounded-2xl md:rounded-3xl shadow-black/5 border-black/5">
             <ListControls
               filter={filter}
               setFilter={setFilter}
