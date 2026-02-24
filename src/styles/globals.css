@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import "./animations.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: #e6c84f;
+  --color-primary-dark: #b89a24;
+  --color-secondary: #0b0b0b;
+  --color-accent: #e5dfca;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --background: #f2f1e8;
+  --foreground: #0b0b0b;
+  --glass: rgba(0, 0, 0, 0.02);
+  --glass-border: rgba(0, 0, 0, 0.08);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+}
+
+.glass {
+  background: white;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.gradient-text {
+  color: #0b0b0b;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.card-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background: white;
+  border-radius: 2.5rem;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.bg-dark-section {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+/* Role Badges */
+.pill-badge {
+  @apply px-3 py-1 rounded-full border border-transparent text-[10px] font-bold uppercase tracking-widest;
+}
+
+.pill-badge.beneficial {
+  @apply text-emerald-600 border-emerald-100 bg-emerald-50;
+}
+
+.pill-badge.neutral {
+  @apply text-amber-600 border-amber-100 bg-amber-50;
+}
+
+.pill-badge.pathogenic {
+  @apply text-rose-600 border-rose-100 bg-rose-50;
+}
