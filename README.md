@@ -1,5 +1,3 @@
-# hellobiome-test-task
-
 A web app to view and filter microbial species. Built with Next.js, TypeScript, and Tailwind CSS.
 
 **Live Demo**: [https://hello-biome-test-task-pi.vercel.app/](https://hello-biome-test-task-pi.vercel.app/)
